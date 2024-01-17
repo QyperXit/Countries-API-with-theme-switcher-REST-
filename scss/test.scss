@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,600;6..12,800&display=swap");
+
+//font
+$light-weight: 300;
+$medium-weight: 600;
+$heavy-weight: 800;
+
+// Import variables
+@import "variables";
+
+// Import other SCSS files
+@import "body";
+@import "nav";
+@import "card";
+@import "dark-mode";
+
+//colors
+$dark-blue: hsl(209, 23%, 22%);
+$very-dark-blue: hsl(207, 26%, 17%);
+$light-mode-text: hsl(200, 15%, 8%);
+$dark-gray: hsl(0, 0%, 52%);
+$very-light-gray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+// body
+$homepage-items-font-size: 14px;
+$detail-page-font-size: 16px;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  // place-items: center;
+  // min-width: 320px;
+  min-height: 100vh;
+  font-family: "Nunito Sans", sans-serif;
+  background: $very-light-gray;
+  color: $very-dark-blue;
+}
+
+.container {
+  width: min(100% - 4rem, 90em);
+  margin-inline: auto;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  background: $white;
+  justify-content: space-between;
+  padding-block: 1.5em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-main {
+  display: flex;
+  justify-content: space-between;
+  width: min(100% - 4rem, 90em);
+  margin-inline: auto;
+}
+
+.logo {
+  font-weight: $heavy-weight;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  color: $very-dark-blue;
+}
+
+.darkMode {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: $very-dark-blue;
+  cursor: pointer;
+}
+
+.fa-moon {
+  rotate: -30deg;
+}
+
+.text-DarkMode {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+
+  font-weight: $medium-weight;
+}
+
+$breakpoint: 475px;
+$midpoint: 975px;
+$highpoint: 720px;
+$filterPoint: 585px;
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  @media (max-width: $midpoint) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: $highpoint) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $breakpoint) {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    background-color: $white;
+    // padding: 20px;
+    text-align: start;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+//selection & search
+.inputFilter {
+  margin-block: 3rem;
+  display: flex;
+  // display: inline-flexbox;
+  justify-content: space-between;
+  width: 100%;
+  @media (max-width: $filterPoint) {
+    margin-block: 1.5rem;
+    flex-direction: column;
+    gap: 2em;
+  }
+}
+
+//search
+.group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 390px;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px 1px rgba(193, 193, 193, 0.377);
+}
+
+.input {
+  width: 100%;
+  min-width: 390px;
+  height: 50px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: $white;
+  color: $very-dark-blue;
+  transition: 0.3s ease;
+
+  @media (max-width: $breakpoint) {
+    min-width: auto;
+    height: 45px;
+  }
+}
+
+.input::placeholder {
+  color: $dark-gray;
+}
+
+.input:focus,
+input:hover {
+  outline: none;
+  border-color: $dark-gray;
+  background-color: $white;
+  box-shadow: 0 0 0 4px $very-light-gray;
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  fill: $dark-gray;
+  width: 1rem;
+  height: 1rem;
+}
+
+//filter by region
+.custom-dropdown {
+  position: relative;
+  width: 190px;
+
+  .selected-option {
+    padding: 12px 14px;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    outline: none;
+    background-color: $white;
+    box-shadow: 0 1px 5px 1px rgba(193, 193, 193, 0.377);
+    cursor: pointer;
+  }
+
+  .options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 2px solid transparent;
+    border-top: none;
+    box-shadow: 0 1px 5px 1px rgba(193, 193, 193, 0.377);
+
+    li {
+      padding: 8px 14px;
+      cursor: pointer;
+      background-color: $white; /* Set background color to opaque white */
+      &:hover {
+        background-color: $very-light-gray;
+      }
+    }
+  }
+}
+
+.fa-angle-down {
+  position: absolute;
+  top: 0;
+  right: 0;
+  translate: -17px 17px;
+  pointer-events: none;
+  color: $very-dark-blue;
+}
+
+//cards details and flags
+
+.nation {
+  padding: 0px 25px;
+  padding-top: 20px;
+  padding-bottom: 55px;
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  span {
+    font-weight: $light-weight;
+    font-size: 14px;
+  }
+}
+
+.population,
+.region,
+.capital {
+  font-weight: $medium-weight;
+  line-height: 1.6rem;
+}
+
+.population {
+  margin-top: 1rem;
+}
+
+img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+// dark mode
+
+$dark-mode-background: $very-dark-blue;
+$dark-mode-text: $white;
+$dark-mode-logo-color: $white;
+$dark-mode-card: $dark-blue;
+
+body.dark-mode {
+  background-color: $dark-mode-background;
+  color: $dark-mode-text;
+
+  .logo {
+    color: $dark-mode-logo-color;
+  }
+
+  .darkMode {
+    color: $dark-mode-logo-color;
+  }
+
+  .card {
+    background-color: $dark-mode-card;
+    // padding: 20px;
+    // text-align: start;
+    // border-radius: 5px;
+    // box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  nav {
+    background: $dark-blue;
+  }
+
+  .input {
+    background-color: $dark-blue;
+    color: $white;
+  }
+
+  .input:focus,
+  input:hover {
+    border-color: $dark-gray;
+    background-color: $dark-blue;
+    color: $white;
+    box-shadow: 0 0 0 4px $dark-blue;
+  }
+
+  .input::placeholder {
+    color: $white;
+  }
+
+  .icon {
+    color: $white;
+  }
+
+  .fa-angle-down {
+    color: $dark-mode-text;
+  }
+
+  .selected-option {
+    background-color: $dark-mode-card;
+  }
+
+  .group {
+    box-shadow: 0 1px 5px 1px $very-dark-blue;
+  }
+
+  .selected-option {
+    box-shadow: 0 1px 5px 1px $very-dark-blue;
+  }
+
+  .options {
+    box-shadow: 0 1px 5px 1px $very-dark-blue;
+    border: 2px solid $very-dark-blue;
+
+    li {
+      background-color: $dark-blue; /* Set background color to opaque white */
+      &:hover {
+        background-color: $very-dark-blue;
+      }
+    }
+  }
+}

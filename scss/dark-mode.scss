@@ -1,0 +1,99 @@
+// dark mode
+
+$dark-mode-background: $very-dark-blue;
+$dark-mode-text: $white;
+$dark-mode-logo-color: $white;
+$dark-mode-card: $dark-blue;
+
+body.dark-mode {
+  background-color: $dark-mode-background;
+  color: $dark-mode-text;
+
+  .logo {
+    color: $dark-mode-logo-color;
+  }
+
+  .darkMode {
+    color: $dark-mode-logo-color;
+  }
+
+  .card {
+    background-color: $dark-mode-card;
+    // padding: 20px;
+    // text-align: start;
+    // border-radius: 5px;
+    // box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  nav {
+    background: $dark-blue;
+  }
+
+  .input {
+    background-color: $dark-blue;
+    color: $white;
+  }
+
+  .input:focus,
+  input:hover {
+    border-color: $dark-gray;
+    background-color: $dark-blue;
+    color: $white;
+    box-shadow: 0 0 0 4px $dark-blue;
+  }
+
+  .input::placeholder {
+    color: $white;
+  }
+
+  .icon {
+    color: $white;
+  }
+
+  .fa-angle-down {
+    color: $dark-mode-text;
+  }
+
+  .selected-option {
+    background-color: $dark-mode-card;
+  }
+
+  .group {
+    box-shadow: 0 1px 5px 1px $very-dark-blue;
+  }
+
+  .selected-option {
+    box-shadow: 0 1px 5px 1px $very-dark-blue;
+  }
+
+  .options {
+    box-shadow: 0 1px 5px 1px $very-dark-blue;
+    border: 2px solid $very-dark-blue;
+
+    li {
+      background-color: $dark-blue; /* Set background color to opaque white */
+      &:hover {
+        background-color: $very-dark-blue;
+      }
+    }
+  }
+
+  // detail card page
+  button {
+    background: $dark-blue;
+    color: $dark-mode-text;
+    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  a {
+    background: $dark-blue;
+
+    color: $dark-mode-text;
+
+    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+  }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>REST Countries API with color theme switcher solution</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-main">
+        <div href="/CountrieRest-Api/index.html" class="logo">
+          Where in the World?
+        </div>
+        <div class="darkMode">
+          <i class="fa-regular fa-moon"></i>
+          <div class="text-DarkMode">Dark Mode</div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="inputFilter">
+        <div class="group">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <g>
+              <path
+                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+              ></path>
+            </g>
+          </svg>
+          <input
+            placeholder="Search for a country..."
+            type="search"
+            class="input"
+          />
+        </div>
+
+        <div class="custom-dropdown" id="regionFilter">
+          <div class="selected-option">Filter by Region</div>
+          <ul class="options">
+            <li data-value="africa">Africa</li>
+            <li data-value="americas">America</li>
+            <li data-value="asia">Asia</li>
+            <li data-value="europe">Europe</li>
+            <li data-value="oceania">Oceania</li>
+          </ul>
+          <i class="fa-solid fa-angle-down"></i>
+        </div>
+      </div>
+      <div class="card-grid">
+        <!-- <div class="card">
+          <div class="country-box">
+            <img
+              src="https://img.freepik.com/free-vector/illustration-german-flag_53876-27101.jpg?w=740&t=st=1705330607~exp=1705331207~hmac=bbf5257e03b86be6c95ad79f607b0e6f84b514ae81f3f47f4dfe13f2d33ef4da"
+              alt="germany-flag"
+            />
+            <div class="country-details">
+              <div class="nation">
+                <h1>Germany</h1>
+                <div class="population">
+                  Population: <span>81,770,900</span>
+                </div>
+                <div class="region">Europe:  <span>Europe</span></div>
+                <div class="capital">Capital: <span>Berlin</spa></div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+        <div class="card">Card 4</div>
+        <div class="card">Card 5</div>
+        <div class="card">Card 6</div>
+        <div class="card">Card 7</div>
+        <div class="card">Card 8</div> -->
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
