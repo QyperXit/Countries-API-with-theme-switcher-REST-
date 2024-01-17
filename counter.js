@@ -37,22 +37,7 @@ document.addEventListener("click", function (event) {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const countriesToFetch = [
-    "Germany",
-    "United States",
-    "Brazil",
-    "Iceland",
-    "Afghanistan",
-    "Åland Islands",
-    "Albania",
-    "Algeria",
-    "Mexico",
-    "Palau",
-    "Samoa",
-    "Spain",
-    "France",
-    "Italy",
-  ];
+  const countriesToFetch = [];
 
   const cardGrid = document.querySelector(".card-grid");
   const searchInput = document.querySelector(".input");
@@ -61,15 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch("https://restcountries.com/v3.1/all")
     .then((res) => res.json())
     .then((data) => {
-      countriesToFetch.forEach((countryName) => {
-        const countryData = data.find(
-          (country) => country.name.common === countryName
-        );
-        if (countryData) {
-          createCard(countryData);
-        } else {
-          console.error(`Country data not found for: ${countryName}`);
-        }
+      data.forEach((countryData) => {
+        createCard(countryData);
       });
 
       searchInput.addEventListener("keyup", handleSearch);
