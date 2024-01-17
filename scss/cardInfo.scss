@@ -1,0 +1,118 @@
+//card info
+.card_container {
+  height: auto;
+  margin-top: 5em;
+  // margin-block: auto;
+}
+
+.country_desciption {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  // justify-content: center;
+  // border: 2px solid red;
+  margin-top: 4.5em;
+
+  @media (max-width: 1028px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// card detail info
+.country-info {
+  display: flex;
+  margin-top: 1.35rem;
+  // gap: 6.5em;
+
+  @media (max-width: 1028px) {
+    flex-direction: column;
+    gap: 2em;
+  }
+}
+
+a {
+  background: $white;
+  text-decoration: none;
+  color: $very-dark-blue;
+  padding: 0.65rem 2.5rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.fa-arrow-left-long,
+a {
+  &:hover {
+    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.347);
+
+    transition: all 200ms ease-in-out;
+  }
+}
+
+button {
+  background: $white;
+  // width: 50px;
+  padding: 0.65rem 2.5rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+  margin-inline: auto;
+  margin-block: auto;
+  @media (max-width: 1028px) {
+    margin-inline: 0em;
+  }
+}
+
+.nation_name {
+  font-size: 1.85rem;
+  font-weight: $heavy-weight;
+  // display: flex;
+  // align-self: first baseline;
+  @media (max-width: 1028px) {
+    margin-top: 1.85em;
+  }
+}
+
+.info_One,
+.info_Two {
+  width: min(100% - 1rem, 90em);
+  // min-width: 300px;
+  div {
+    font-weight: $light-weight;
+    font-size: 14px;
+  }
+}
+
+strong {
+  font-weight: $medium-weight;
+  line-height: 1.75rem;
+}
+
+.description_IMG {
+  width: 100%;
+  height: auto;
+  max-width: 700px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
+.country-border {
+  margin-top: 4em;
+  display: flex;
+  @media (max-width: $filterPoint) {
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  strong {
+    margin-right: 1rem;
+  }
+  button {
+    padding: 0.45rem 1.35rem;
+    margin-right: 1em;
+    width: auto;
+    margin-bottom: 1rem;
+  }
+}

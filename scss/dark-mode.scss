@@ -8,6 +8,7 @@ $dark-mode-card: $dark-blue;
 body.dark-mode {
   background-color: $dark-mode-background;
   color: $dark-mode-text;
+  transition: all 250ms ease-in-out;
 
   .logo {
     color: $dark-mode-logo-color;
@@ -95,5 +96,10 @@ body.dark-mode {
     color: $dark-mode-text;
 
     box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.347);
+      transition: all 200ms ease-in-out;
+    }
   }
 }

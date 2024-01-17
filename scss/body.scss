@@ -18,6 +18,7 @@ body {
   font-family: "Nunito Sans", sans-serif;
   background: $very-light-gray;
   color: $very-dark-blue;
+  transition: all 250ms ease-in-out;
 }
 
 .container {
