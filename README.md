@@ -58,7 +58,7 @@ In the future, I aim to strengthen my proficiency in utilizing Vite, exploring m
 
 ## Author
 
-Coming Soon ..
+Coming Soon ...
 
 ## Acknowledgments
 
