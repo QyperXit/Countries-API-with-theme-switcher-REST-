@@ -145,7 +145,7 @@ function populateCountryDetails(countryData, allCountries) {
 
       // Find the border country data
       const borderCountry = allCountries.find(
-        (country) => country.cca2 === borderCountryCode
+        (country) => country.cca3 === borderCountryCode
       );
 
       // Set the button text to the full name of the border country or code if not found
