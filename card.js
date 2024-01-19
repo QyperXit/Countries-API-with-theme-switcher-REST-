@@ -73,14 +73,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (selectedCountry) {
       // Populate HTML with the details of the selected country
-      populateCountryDetails(selectedCountry);
+      populateCountryDetails(selectedCountry, allCountries);
     } else {
       console.error(`Country data not found for: ${selectedCountryName}`);
     }
   }
 });
 
-function populateCountryDetails(countryData) {
+function populateCountryDetails(countryData, allCountries) {
   const flagsContainer = document.querySelector(".description_IMG");
 
   if (countryData.flags) {
@@ -93,20 +93,12 @@ function populateCountryDetails(countryData) {
     ".nation_name"
   ).innerHTML = `${countryData.name.common}`;
 
-  //////
-
   const countryDataName = countryData.name.nativeName;
-
-  // Get the first (and only) object inside countryDataName
   const firstKey = Object.keys(countryDataName)[0];
   const firstValue = countryDataName[firstKey].common;
-
-  //   console.log(`Native Name: ${firstValue}`);
   document.querySelector(
     ".nativeName"
   ).innerHTML = `<strong>Native Name:</strong> ${firstValue}`;
-
-  ////
 
   document.querySelector(
     ".population"
@@ -130,10 +122,6 @@ function populateCountryDetails(countryData) {
 
   for (const currencyCode in countryData.currencies) {
     const currency = countryData.currencies[currencyCode];
-    // console.log(`Currency: ${currencyCode}`);
-    // console.log(`  Name: ${currency.name}`);
-    // console.log(`  Symbol: ${currency.symbol}`);
-    // ... access other properties as needed
     document.querySelector(
       ".currencies"
     ).innerHTML = `<strong>Currencies:</strong> ${currency.name}`;
@@ -145,35 +133,62 @@ function populateCountryDetails(countryData) {
     countryData.languages
   ).join(", ")}`;
 
-  /////
   const bordersContainer = document.querySelector(".country-border div");
   bordersContainer.innerHTML = "";
 
-  // Limit the number of buttons to 3
   let buttonCount = 0;
 
   countryData.borders.forEach((borderCountryCode) => {
-    if (buttonCount < 4) {
+    if (buttonCount < 3) {
       const button = document.createElement("button");
-      button.textContent = borderCountryCode;
+      console.log(borderCountryCode);
+
+      // Find the border country data
+      const borderCountry = allCountries.find(
+        (country) => country.cca2 === borderCountryCode
+      );
+
+      // Set the button text to the full name of the border country or code if not found
+      button.textContent = borderCountry
+        ? borderCountry.name.common
+        : borderCountryCode;
+
       button.addEventListener("click", () => {
-        // Handle the button click, you can navigate to the details page or do other actions
-        console.log(`Clicked on border country: ${borderCountryCode}`);
+        handleBorderClick(borderCountryCode, allCountries);
       });
 
-      // Append the button to the borders container
       bordersContainer.appendChild(button);
 
       buttonCount++;
     } else {
-      return; // Break the loop once 3 buttons are created
+      return;
     }
   });
 }
 
+function handleBorderClick(borderCountryCode, allCountries) {
+  console.log(
+    "All country codes:",
+    allCountries.map((country) => country.cca2)
+  );
+
+  const borderCountry = allCountries.find(
+    (country) => country.cca3 === borderCountryCode
+  );
+
+  console.log("Border country:", borderCountry);
+
+  if (borderCountry) {
+    localStorage.setItem("selectedCountry", borderCountry.name.common);
+    window.location.href = "/cards.html";
+  } else {
+    console.error(`Border country data not found for: ${borderCountryCode}`);
+  }
+}
+
+//darkmode
 document.addEventListener("DOMContentLoaded", () => {
   toggleDarkMode();
-  // ... other code
 });
 
 document.addEventListener("DOMContentLoaded", function () {

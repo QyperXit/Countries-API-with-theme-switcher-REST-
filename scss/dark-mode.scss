@@ -88,6 +88,12 @@ body.dark-mode {
     background: $dark-blue;
     color: $dark-mode-text;
     box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      cursor: pointer;
+      scale: 0.9;
+      transition: scale 200ms ease-in-out;
+    }
   }
 
   a {
