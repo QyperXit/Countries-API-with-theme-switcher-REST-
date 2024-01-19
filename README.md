@@ -24,6 +24,9 @@ The challenge here revolves around providing users with a seamless experience in
 
 ### Screenshot
 
+![Desktop](public/screenshots/desktop.png)
+!![Mobile - Cards](<public/screenshots/Mobile & cards.png>)
+
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
