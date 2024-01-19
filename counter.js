@@ -151,10 +151,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // import { toggleDarkMode } from "./darkMode.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-  toggleDarkMode();
-  // ... other code
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   toggleDarkMode();
+//   // ... other code
+// });
 
 document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
