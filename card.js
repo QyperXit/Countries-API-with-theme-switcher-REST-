@@ -200,6 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Apply dark mode based on localStorage preference
   body.classList.toggle("dark-mode", isDarkModeEnabled);
+  updateMoonIcon(isDarkModeEnabled);
 
   // Update dark mode setting on button click
   darkModeButton.addEventListener("click", function () {
@@ -208,9 +209,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Update localStorage with the current dark mode setting
     localStorage.setItem("darkMode", body.classList.contains("dark-mode"));
+    updateMoonIcon(body.classList.contains("dark-mode"));
   });
 });
 
+////
+
+function updateMoonIcon(isDarkModeEnabled) {
+  const moonIcon = document.querySelector(".fa-moon");
+
+  if (isDarkModeEnabled) {
+    moonIcon.classList.replace("fa-regular", "fa-solid");
+  } else {
+    moonIcon.classList.replace("fa-solid", "fa-regular");
+  }
+}
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const moonIcon = document.querySelector(".fa-moon");
+
+//   if (isDarkModeEnabled) {
+//     moonIcon.classList.replace("fa-regular", "fa-solid");
+//   } else {
+//     moonIcon.classList.replace("fa-solid", "fa-regular");
+//   }
+// });
 // document.addEventListener("DOMContentLoaded", () => {
 //   let darkModeButton = document.querySelector(".darkMode");
 //   if (darkModeButton) {

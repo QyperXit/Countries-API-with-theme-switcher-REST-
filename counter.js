@@ -165,6 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Apply dark mode based on localStorage preference
   body.classList.toggle("dark-mode", isDarkModeEnabled);
+  updateMoonIcon(isDarkModeEnabled);
 
   // Update dark mode setting on button click
   darkModeButton.addEventListener("click", function () {
@@ -173,10 +174,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Update localStorage with the current dark mode setting
     localStorage.setItem("darkMode", body.classList.contains("dark-mode"));
+    updateMoonIcon(body.classList.contains("dark-mode"));
   });
 });
+
+////
+
+function updateMoonIcon(isDarkModeEnabled) {
+  const moonIcon = document.querySelector(".fa-moon");
+
+  if (isDarkModeEnabled) {
+    moonIcon.classList.replace("fa-regular", "fa-solid");
+  } else {
+    moonIcon.classList.replace("fa-solid", "fa-regular");
+  }
+}
 
 const logoDiv = document.querySelector(".logo");
 logoDiv.addEventListener("click", () => {
   window.location.href = "/CountriesRest-Api/index.html";
 });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const cardGrid = document.querySelector(".card-grid");
+
+//   cardGrid.addEventListener("click", function (event) {
+//     const clickedCard = event.target.closest(".card");
+//     if (clickedCard) {
+//       console.log(clickedCard.querySelector(".nation h1").textContent);
+//     }
+//   });
+// });
+
+// const cardGrid = document.querySelector(".card-grid");
+
+// // Fetch country data once for all countries
+// fetch("https://restcountries.com/v3.1/all")
+//   .then((res) => res.json())
+//   .then((data) => {
+//     // Create cards for each country
+//     console.log(data);
+//     fetch("https://restcountries.com/v3.1/all")
+//       .then((res) => {
+//         return res.json();
+//       })
+//       .then((data) => {
+//         const europeanCountries = data.filter(
+//           (country) => country.region === "Europe"
+//         );
+//         europeanCountries.forEach((country) => {
+//           console.log(`Country: ${country.name.common}`);
+//           console.log(`Capital: ${country.capital}`);
+//           console.log(`Flag: ${country.flags.svg}`);
+//           console.log(`Population: ${country.population}`);
+//           console.log("---"); // Separator between countries
+//         });
+//       });
+
+//     // const germany = data.find((country) => country.name.common === "Germany");
+//     // console.log(america);
+//   });

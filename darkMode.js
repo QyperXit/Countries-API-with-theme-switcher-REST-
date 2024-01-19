@@ -2,6 +2,7 @@
 export function toggleDarkMode() {
   const body = document.body;
   const darkModeButton = document.querySelector(".darkMode");
+  const moonIcon = document.querySelector(".fa-moon");
 
   darkModeButton.addEventListener("click", () => {
     const isDarkModeEnabled = body.classList.toggle("dark-mode");
