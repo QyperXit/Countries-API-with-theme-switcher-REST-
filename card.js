@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("selectedCountry", countryName);
 
       // Navigate to cards.html
-      window.location.href = "/cards.html";
+      window.location.href = "Countries-API-with-theme-switcher-REST-/cards.html";
     }
   });
 });
@@ -180,7 +180,7 @@ function handleBorderClick(borderCountryCode, allCountries) {
 
   if (borderCountry) {
     localStorage.setItem("selectedCountry", borderCountry.name.common);
-    window.location.href = "/cards.html";
+    window.location.href = "Countries-API-with-theme-switcher-REST-/cards.html";
   } else {
     console.error(`Border country data not found for: ${borderCountryCode}`);
   }
