@@ -1,6 +1,19 @@
 # files
 node_modules
-
+cards.html
+card.js
+index.html
+counter.js
+main.js
+darkMode.js
+vite.config.js
+body.scss
+card.scsscardInfo.scss
+dark-mode.scss
+input.scss
+nav.scss
+test.scss
+variables.scss
 
 # Logs
 logs
@@ -12,8 +25,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
-dist-ssr
+# dist
+# dist-ssr
 *.local
 
 # Editor directories and files

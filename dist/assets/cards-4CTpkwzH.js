@@ -1,0 +1,1 @@
+import{t as o}from"./card-2IZJD25H.js";document.addEventListener("DOMContentLoaded",()=>{o(),window.addEventListener("darkModeChanged",d=>{const{isDarkModeEnabled:e}=d.detail;document.body.classList.toggle("dark-mode",e)})});
