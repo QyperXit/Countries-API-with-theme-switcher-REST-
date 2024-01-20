@@ -30,7 +30,7 @@ The challenge here revolves around providing users with a seamless experience in
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://qyperxit.github.io/Countries-API-with-theme-switcher-REST-/)
+- Live Site URL: [live site](https://qyperxit.github.io/Countries-API-with-theme-switcher-REST-/)
 
 ### Built with
 
