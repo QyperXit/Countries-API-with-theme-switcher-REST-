@@ -1,20 +1,20 @@
 # files
 node_modules
-cards.html
-card.js
-index.html
-counter.js
-main.js
-darkMode.js
-vite.config.js
-body.scss
-card.scsscardInfo.scss
-dark-mode.scss
-input.scss
-nav.scss
-test.scss
-variables.scss
-scss
+
+# card.js
+
+# counter.js
+# main.js
+# darkMode.js
+# vite.config.js
+# body.scss
+# card.scsscardInfo.scss
+# dark-mode.scss
+# input.scss
+# nav.scss
+# test.scss
+# variables.scss
+# scss
 
 # Logs
 logs
