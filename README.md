@@ -29,7 +29,7 @@ The challenge here revolves around providing users with a seamless experience in
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/rest-countries-api-using-css-grid-and-sass-variable-yI_oIu_QX4)
 - Live Site URL: [live site](https://qyperxit.github.io/Countries-API-with-theme-switcher-REST-/)
 
 ### Built with
