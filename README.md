@@ -41,6 +41,7 @@ The challenge here revolves around providing users with a seamless experience in
 - CSS Grid
 - Mobile-friendly workflow
 - Javascript
+- Vite
 
 ### What I learned
 
